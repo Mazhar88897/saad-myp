@@ -20,7 +20,7 @@ const RedirectBoxes = () => {
         className="h-96 w-3/5 border-dashed border-2 border-black rounded-xl shadow-xl flex justify-center items-center cursor-pointer hover:bg-gray-100 transition"
      
       >
-      <Image src="https://www.ssuet.edu.pk/wp-content/uploads/SSUET-Official-Logo.webp" height="80" alt="Description of the image" width="500" />
+      <Image src="/logo.png"height="80" alt="Description of the image" width="500" />
                 
       </div>
      

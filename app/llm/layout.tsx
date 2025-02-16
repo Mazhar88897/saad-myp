@@ -286,8 +286,8 @@ const Component = ({children}: {
         <div className="flex h-full flex-col justify-between py-6 px-4">
           <div className="space-y-6 m-1">
             <Link href="#" className="flex items-center gap-2 font-bold" prefetch={false}>
-            <Image src="https://www.ssuet.edu.pk/wp-content/uploads/SSUET-Official-Logo.webp" height="80" alt="Description of the image" width="500" />
-           
+            <Image src="/logo.png" height="80" width="500" alt="Description of the image" />
+  
             </Link>
             <nav className="space-y-1">
               <Link
