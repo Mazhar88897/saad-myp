@@ -1,150 +1,130 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
-export default function EmployeeManagement() {
-  // State for each section
-  const [loanData, setLoanData] = useState({
-    employeeId: "",
-    loanAmount: "",
-    date: "",
-    availableFunds: "0.00",
-  });
-
-  const [contributionData, setContributionData] = useState({
-    employeeId: "",
-    contributionAmount: "",
-    date: "",
-  });
-
-  const [profileData, setProfileData] = useState({
-    employeeId: "",
-    department: "",
-    grade: "",
-    nlc: "",
-    appDate: "",
-    status: "Working",
-  });
-
-  // Handle Input Change
-  const handleChange = () => {
-    // const { name, value } = e.target;
-    // setter((prevData) => ({ ...prevData, [name]: value }));
-  };
-
+export default function EmployeeRecords() {
   return (
-     <div className="p-8 flex-1">
-          <h1 className="text-2xl  font-bold"> Dashboard</h1>
-            <p className="text-gray-500 mb-4 dark:text-gray-400">
-              Welcome to your dashboard. Here you can manage your data.
-           </p>
-        <div className=" flex flex-col h-full justify-center items-center space-y-4">
-           
-        <div className="flex flex-col h-full items-center justify-center space-y-6 p-4">
-      <div className="flex">
-        {/* Loan Entries */}
-        <Card className="w-96 shadow-lg m-2">
-          <CardHeader>
-            <CardTitle>Loan Entries</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Label>Employee ID</Label>
-            <Input name="employeeId" value={loanData.employeeId} onChange={(e) => handleChange(e, setLoanData)} />
-
-            <Label className="mt-2">Loan Amount</Label>
-            <Input name="loanAmount" value={loanData.loanAmount} onChange={(e) => handleChange(e, setLoanData)} />
-
-            <Label className="mt-2">Select Date</Label>
-            <Input type="date" name="date" value={loanData.date} onChange={(e) => handleChange(e, setLoanData)} />
-
-            <Label className="mt-2">Available Funds</Label>
-            <Input value={loanData.availableFunds} disabled />
-
-            <div className="mt-4 flex justify-between">
-              <Button variant="outline">New</Button>
-              <Button variant="default">Update</Button>
+    <div className="p-8">
+      <h1 className="text-2xl font-bold">Document Dashboard</h1>
+        <p className="text-gray-500 dark:text-gray-400">
+          Welcome to your dashboard. Here you can manage your documents.
+        </p>
+    
+    <div className="flex flex-col justify-center container   w-[90%] mx-6 py-6 space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Edit Records</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-2">
+              <Label htmlFor="employeeId">Employee ID</Label>
+              <Input id="employeeId" placeholder="Enter Employee ID" />
             </div>
-          </CardContent>
-        </Card>
-
-        {/* Employee Contribution */}
-        <Card className="w-96 shadow-lg m-2">
-          <CardHeader>
-            <CardTitle>Employee Contribution</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Label>Employee ID</Label>
-            <Input name="employeeId" value={contributionData.employeeId} onChange={(e) => handleChange(e, setContributionData)} />
-
-            <Label className="mt-2">Employee Contribution</Label>
-            <Input name="contributionAmount" value={contributionData.contributionAmount} onChange={(e) => handleChange(e, setContributionData)} />
-
-            <Label className="mt-2">Select Date</Label>
-            <Input type="date" name="date" value={contributionData.date} onChange={(e) => handleChange(e, setContributionData)} />
-
-            <div className="mt-4 flex justify-between">
-              <Button variant="outline">New</Button>
-              <Button variant="default">Update</Button>
-              <Button variant="ghost">View</Button>
+            <div className="grid gap-2">
+              <Label htmlFor="department">Department</Label>
+              <Input id="department" placeholder="Enter Department" />
             </div>
-          </CardContent>
-        </Card>
-
-        {/* Profile Information */}
-        <Card className="w-96 shadow-lg m-2">
-          <CardHeader>
-            <CardTitle>Edit Records</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Label>Employee ID</Label>
-            {/* <Input name="employeeId" value={profileData.employeeId} onChange={(e) => handleChange(e, setProfileData)} /> */}
-            <Input name="employeeId" value={profileData.employeeId}  />
-            <Label className="mt-2">Department</Label>
-            <Input name="department" value={profileData.department} />
-
-            <Label className="mt-2">Grade</Label>
-            <Input name="grade" value={profileData.grade}  />
-
-            <Label className="mt-2">NLC No.</Label>
-            <Input name="nlc" value={profileData.nlc} />
-
-            <Label className="mt-2">App Date</Label>
-            <Input type="date" name="appDate" value={profileData.appDate}  />
-
-            <Label className="mt-2">Status</Label>
-            <Select value={profileData.status} >
-              <SelectTrigger>
-                <SelectValue placeholder="Select Status" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Working">Working</SelectItem>
-                <SelectItem value="On Leave">On Leave</SelectItem>
-                <SelectItem value="Resigned">Resigned</SelectItem>
-              </SelectContent>
-            </Select>
-
-            <div className="mt-4 flex justify-between">
-              <Button variant="default">Save</Button>
-              <Button variant="ghost">View</Button>
-              <Button variant="outline">Calculate</Button>
+            <div className="grid gap-2">
+              <Label htmlFor="designation">Designation</Label>
+              <Input id="designation" placeholder="Enter Designation" />
             </div>
-          </CardContent>
-        </Card>
-      </div>
+            <div className="grid gap-2">
+              <Label htmlFor="nlcNo">NLC No#</Label>
+              <Input id="nlcNo" placeholder="Enter NLC Number" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="grade">Grade</Label>
+              <Input id="grade" placeholder="Enter Grade" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="appDate">App_Date</Label>
+              <Input id="appDate" type="date" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="status">Status</Label>
+              <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select status" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="working">Working</SelectItem>
+                  <SelectItem value="retired">Retired</SelectItem>
+                  <SelectItem value="terminated">Terminated</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+          <div className="flex justify-end mt-4 space-x-2">
+            <Button variant="outline">View</Button>
+            <Button>Save</Button>
+          </div>
+        </CardContent>
+      </Card>
 
-      {/* Exit Button */}
-      <Button variant="destructive" className="mt-1 w-1/2">
-        Exit
-      </Button>
-    </div>
-         
-        </div>
-        </div>
-   
-  );
+      <Card>
+        <CardHeader>
+          <CardTitle>Contribution Details</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-2">
+              <Label htmlFor="contEmployeeId">Employee ID</Label>
+              <Input id="contEmployeeId" placeholder="Enter Employee ID" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="uniContribution">University Contribution</Label>
+              <Input id="uniContribution" placeholder="0.00" type="number" step="0.01" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="empContribution">Employee Contribution</Label>
+              <Input id="empContribution" placeholder="0.00" type="number" step="0.01" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="contDate">Select Date</Label>
+              <Input id="contDate" type="date" />
+            </div>
+          </div>
+          <div className="flex justify-end mt-4 space-x-2">
+            <Button variant="outline">View</Button>
+            <Button variant="outline">New</Button>
+            <Button>Update</Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Loan Details</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-2">
+              <Label htmlFor="loanEmployeeId">Employee ID</Label>
+              <Input id="loanEmployeeId" placeholder="Enter Employee ID" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="loanAmount">Loan Amount</Label>
+              <Input id="loanAmount" placeholder="0.00" type="number" step="0.01" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="loanDate">Select Date</Label>
+              <Input id="loanDate" type="date" />
+            </div>
+          </div>
+          <div className="flex justify-end mt-4 space-x-2">
+            <Button variant="outline">View</Button>
+            <Button variant="outline">New</Button>
+            <Button>Update</Button>
+          </div>
+        </CardContent>
+      </Card>
+      <Button className="bg-red-600 text-white">Exit</Button>
+    </div></div>
+  )
 }
+

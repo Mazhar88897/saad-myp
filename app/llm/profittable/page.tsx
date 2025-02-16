@@ -42,6 +42,10 @@ export default function ProfitCalculation() {
               <Input value={actualProfit} onChange={(e) => setActualProfit(e.target.value)} placeholder="Enter Profit" />
             </div>
             <div className="flex flex-col">
+              <Label className="mb-1">Rounded Profit</Label>
+              <Input value={actualProfit} onChange={(e) => setActualProfit(e.target.value)} placeholder="Rounded  Profit" />
+            </div>
+            <div className="flex flex-col">
               <Label className="mb-1">Percentage</Label>
               <Input value={percentage} onChange={(e) => setPercentage(e.target.value)} placeholder="%" />
             </div>
@@ -81,7 +85,7 @@ export default function ProfitCalculation() {
           {/* Action Buttons */}
           <div className="mt-4 flex justify-between">
             <Button variant="outline">Print</Button>
-            <Button variant="default">Finalize</Button>
+            <Button variant="default">Finalize (Secure) </Button>
             <Button variant="secondary">Change</Button>
             <Button variant="destructive">Exit</Button>
           </div>

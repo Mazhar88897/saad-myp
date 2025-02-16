@@ -292,8 +292,8 @@ const Component = ({children}: {
   children: React.ReactNode
 }) => {
   return (
-    <div className="flex fixed  h-screen w-full">
-      <div className="hidden    lg:block lg:w-64 lg:shrink-0 lg:border-r lg:bg-gray-100 dark:lg:bg-gray-800">
+    <div className="flex h-screen   w-full">
+      <div className="hidden  h-full  sticky  lg:block lg:w-64 lg:shrink-0 lg:border-r lg:bg-gray-100 dark:lg:bg-gray-800">
         <div className="flex h-full flex-col justify-between py-6 px-4">
           <div className="space-y-6 m-1">
             <Link href="#" className="flex items-center gap-2 font-bold" prefetch={false}>
@@ -376,7 +376,7 @@ const Component = ({children}: {
         </div>
         
       </div>
-      <div className="flex-1">{children}</div>
+      <div className="flex-1 overflow-auto">{children}</div>
     </div>
   );
 };
